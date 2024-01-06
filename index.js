@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
     let rw = getRandomInt(200,500);
     let rh = getRandomInt(300,500);
     let grass = grasses[getRandomInt(0,grasses.length)];
-    const text = `<!DOCTYPE html><html> <head> <title>keep</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://iguannalin.github.io/keep/index.css"/></head> <body><div id="overlay"></div> <div id="container">${grass}</div></body><script>setTimeout(window.close, 200);</script></html>`;
+    const text = `<!DOCTYPE html><html> <head> <title>keep</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://iguannalin.github.io/keep/index.css"/></head> <body><div id="overlay"></div> <div id="grassy">${grass}</div></body><script>setTimeout(window.close, 200);</script></html>`;
     const blob = new Blob([text], {type: "text/html"});
     const blobUrl = URL.createObjectURL(blob);
     window.open(blobUrl, '_blank', `popup,width=${100},height=${100},left=${rw},top=${rh}`);
