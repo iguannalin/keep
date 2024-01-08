@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
   
   function createWindow(mX, mY) {
     let grass = grasses[getRandomInt(0,grasses.length)];
-    const text = `<!DOCTYPE html><html> <head> <title>keep</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://iguannalin.github.io/keep/index.css"/></head> <body><div id="container"></div> <div id="grassy">${grass}</div></body><script>setTimeout(window.close, 1700);</script></html>`;
+    const text = `<!DOCTYPE html><html> <head> <title>keep</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://iguannalin.github.io/keep/index.css"/></head> <body><div id="container"><div id="cursor"></div></div></body><script>let c=document.getElementById("cursor");cTop=0;setInterval(() => {c.style.top=cTop+'px';cTop++;},100);//setTimeout(window.close, 1700);</script></html>`;
     const blob = new Blob([text], {type: "text/html"});
     const blobUrl = URL.createObjectURL(blob);
     const wLeft = getRandomInt(mX-os, mX+os);
@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
     index++;
   }
   
-  document.addEventListener("mousemove", e => {
+  window.addEventListener("mousemove", e => {
     cursor.style.visibility = "visible";
     cursor.style.left = e.clientX - 25 + "px";
     cursor.style.top = e.clientY - 25 + "px";
