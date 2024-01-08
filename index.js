@@ -4,11 +4,7 @@ window.addEventListener("load", () => {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }
-  function clamp(number, min, max) {
-    return Math.max(min, Math.min(number, max));
-  }
   const cursor = document.getElementById("cursor");
-  let index = 0;
   let os = 100;
   
   function createWindow(mX, mY) {
@@ -19,8 +15,6 @@ window.addEventListener("load", () => {
     const wTop = getRandomInt(mY-os, mY+os);
     window.open(blobUrl, '_blank', `popup,width=${10},height=${10},left=${wLeft},top=${wTop}`);
     window.URL.revokeObjectURL(blobUrl);
-    console.log(window.screenX, window.screenY);
-    index++;
   }
   
   window.addEventListener("mousemove", e => {
