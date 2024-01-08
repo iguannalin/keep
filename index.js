@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
   function createWindow(mX, mY) {
     // cursor.style.visibility = "visible";
     let grass = grasses[getRandomInt(0,grasses.length)];
-    const text = `<!DOCTYPE html><html> <head> <title>keep</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://iguannalin.github.io/keep/index.css"/></head> <body><div id="overlay"></div> <div id="grassy">${grass}</div></body><script>setTimeout(window.close, 1500);document.getElementById("container").style.backgroundColor='rgba(${getRandomInt(200, 250)}, 230, 0, 0.65)'</script></html>`;
+    const text = `<!DOCTYPE html><html> <head> <title>keep</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://iguannalin.github.io/keep/index.css"/></head> <body><div id="container"></div> <div id="grassy">${grass}</div></body><script>//setTimeout(window.close, 1500);</script></html>`;
     const blob = new Blob([text], {type: "text/html"});
     const blobUrl = URL.createObjectURL(blob);
     const wLeft = getRandomInt(mX-os, mX+os);
